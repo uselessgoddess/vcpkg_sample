@@ -15,4 +15,18 @@ jobs:
       uses: nicledomaS/cmake_build_action@v1.4
       env:
         CXX: ${{ matrix.compiler }}
+        
+  windows-build:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        compiler: [g++, clang++, msvc]
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2.0.0
+    - name: Build project
+      uses: nicledomaS/cmake_build_action@v1.4
+      env:
+        CXX: ${{ matrix.compiler }}
 
+      
