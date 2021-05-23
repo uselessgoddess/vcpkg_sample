@@ -5,7 +5,6 @@ project(vcpkg_sample)
 set(CMAKE_CXX_STANDARD 20)
 
 message(${CMAKE_CXX_COMPILER})
-vcpkg_add_package(sqlite3)
 
 find_package(unofficial-sqlite3 CONFIG REQUIRED)
 
