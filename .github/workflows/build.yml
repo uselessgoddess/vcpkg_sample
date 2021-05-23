@@ -37,8 +37,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2.0.0
-    - name: Install glib
-      run:  brew install glib
+    - name: Install glibc
+      run:  brew install glibc
     - name: Build project
       uses: nicledomaS/cmake_build_action@v1.4
       with: 
