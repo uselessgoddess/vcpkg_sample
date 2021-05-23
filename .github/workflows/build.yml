@@ -10,6 +10,6 @@ jobs:
         compiler: [g++, clang++, msvc]
     steps:
     - name: Build & Test
-      run: cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=g++ -DCMAKE_CC_COMPILER=gcc -SD:\a\vcpkg_sample\vcpkg_sample -BD:\a\vcpkg_sample/build
+      run: cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=g++ -DCMAKE_CC_COMPILER=gcc
 
       
