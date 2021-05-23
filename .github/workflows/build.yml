@@ -9,8 +9,6 @@ jobs:
       matrix:
         compiler: [g++, clang++, msvc]
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2.0.0
     - name: Build & Test
       run: cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=g++ -DCMAKE_CC_COMPILER=gcc -SD:\a\vcpkg_sample\vcpkg_sample -BD:\a\vcpkg_sample/build
 
