@@ -9,7 +9,10 @@ jobs:
       matrix:
         compiler: [g++]
     steps:
-    - name: Build & Test
-      run: cmake CmakeLists.txt
+    - name: Build
+      run: |
+        cd ${{ github.workspace }}
+        mkdir build
+        cd build
+        cmake .. -DCMAKE_CXX_COMPILER=g++ -DCMAKE_CC_COMPILER=gcc
 
-      
