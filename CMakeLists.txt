@@ -15,7 +15,7 @@ message("CMAKE PREFIX ${CMAKE_PREFIX_PATH}")
 message("CURRENT COMPILER IS ${CMAKE_CXX_COMPILER}")
 
 
-vcpkg_add_package(sqlite3:x64-mingw-static)
+vcpkg_add_package(sqlite3)
 
 find_package(unofficial-sqlite3 CONFIG REQUIRED)
 
