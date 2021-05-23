@@ -10,12 +10,6 @@ jobs:
         compiler: [g++]
     steps:
     - name: Build & Test
-      uses: ashutoshvarma/action-cmake-build@master
-      with:
-          build-dir: ${{ runner.workspace }}/build
-          cc: gcc
-          cxx: g++
-          build-type: Debug
-          parallel: 14
+      run: cmake CmakeLists.txt
 
       
