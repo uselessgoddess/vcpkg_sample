@@ -9,6 +9,7 @@ message("CURRENT COMPILER IS ${CMAKE_CXX_COMPILER}")
 
 include(vcpkg.cmake)
 
+message("CMAKE PREFIX ${CMAKE_PREFIX_PATH}")
 message("CURRENT COMPILER IS ${CMAKE_CXX_COMPILER}")
 
 vcpkg_add_package(sqlite3)
