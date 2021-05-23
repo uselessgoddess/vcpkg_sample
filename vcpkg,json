@@ -1,0 +1,6 @@
+{
+  "name": "vcpkg_sample",
+  "dependencies": [
+    "sqlite3",
+  ]
+}
