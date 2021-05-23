@@ -25,9 +25,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2.0.0
     - name: Build project
-      uses: nicledomaS/cmake_build_action@v1.4
-      with: 
-        cmake_args: -D CMAKE_CXX_COMPILER = ${ { matrix.compiler_cxx } }
+      uses: ashutoshvarma/action-cmake-build@master
+      with:
+        build-dir: ${{ runner.workspace }}/build
+        # will set the CC & CXX for cmake
+        cxx: ${{ matrix.compiler_cxx }}
 
   macos-build:
     runs-on: macos-latest
