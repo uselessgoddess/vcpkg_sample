@@ -10,6 +10,20 @@ jobs:
         compiler: [g++, clang++, msvc]
     steps:
     - name: Build & Test
-      run: cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=g++ -DCMAKE_CC_COMPILER=gcc
+      uses: ashutoshvarma/action-cmake-build@master
+      with:
+          build-dir: ${{ runner.workspace }}/build
+          # will set the CC & CXX for cmake
+          cc: gcc
+          cxx: g++
+          build-type: Release
+          # Extra options pass to cmake while configuring project
+          configure-options: -DCMAKE_C_FLAGS=-w32 -DPNG_INCLUDE=OFF
+          run-test: true
+          ctest-options: -R mytest
+          # install the build using cmake --install
+          install-build: true
+          # run build using '-j [parallel]' to use multiple threads to build
+          parallel: 14
 
       
