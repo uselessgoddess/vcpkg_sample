@@ -11,6 +11,7 @@ jobs:
     steps:
     - name: Build
       run: |
+        ls
         mkdir build
         cd build
         cmake .. -DCMAKE_CXX_COMPILER=g++ -DCMAKE_CC_COMPILER=gcc
