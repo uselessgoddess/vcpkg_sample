@@ -6,6 +6,10 @@ set(CMAKE_CC_COMPILER gcc)
 include(vcpkg.cmake)
 project(vcpkg_sample)
 
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_COMPILER g++)
+set(CMAKE_CC_COMPILER gcc)
+
 
 message("CURRENT COMPILER IS ${CMAKE_CXX_COMPILER}")
 
