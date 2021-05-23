@@ -7,7 +7,6 @@ jobs:
     runs-on: windows-latest
     strategy:
       matrix:
-        compiler_c: [gcc, clang, msvc]
         compiler_cxx: [g++, clang, msvc]
     steps:
     - name: Checkout
@@ -15,14 +14,12 @@ jobs:
     - name: Build project
       uses: nicledomaS/cmake_build_action@v1.4
       with: 
-        cmake_args: -D CMAKE_C_COMPILER = ${ { matrix.compiler_c } }
-                    -D CMAKE_CXX_COMPILER = ${ { matrix.compiler_cxx } }
+        cmake_args: -D CMAKE_CXX_COMPILER = ${ { matrix.compiler_cxx } }
                     
   linux-build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        compiler_c: [gcc, clang, msvc]
         compiler_cxx: [g++, clang, msvc]
     steps:
     - name: Checkout
@@ -30,21 +27,20 @@ jobs:
     - name: Build project
       uses: nicledomaS/cmake_build_action@v1.4
       with: 
-        cmake_args: -D CMAKE_C_COMPILER = ${ { matrix.compiler_c } }
-                    -D CMAKE_CXX_COMPILER = ${ { matrix.compiler_cxx } }
+        cmake_args: -D CMAKE_CXX_COMPILER = ${ { matrix.compiler_cxx } }
 
   macos-build:
     runs-on: macos-latest
     strategy:
       matrix:
-        compiler_c: [gcc, clang, msvc]
         compiler_cxx: [g++, clang, msvc]
     steps:
     - name: Checkout
       uses: actions/checkout@v2.0.0
+    - name: Install glib
+      run:  brew install glib
     - name: Build project
       uses: nicledomaS/cmake_build_action@v1.4
       with: 
-        cmake_args: -D CMAKE_C_COMPILER = ${ { matrix.compiler_c } }
-                    -D CMAKE_CXX_COMPILER = ${ { matrix.compiler_cxx } }
+        cmake_args: -D CMAKE_CXX_COMPILER = ${ { matrix.compiler_cxx } }
 
