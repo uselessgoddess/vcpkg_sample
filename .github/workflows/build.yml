@@ -12,10 +12,6 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2.0.0
     - name: Build & Test
-      uses: ashutoshvarma/action-cmake-build@master
-      with:
-          build-dir: ${{ runner.workspace }}/build
-          cc: gcc
-          cxx: g++
+      run: C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=g++ -DCMAKE_CC_COMPILER=gcc -SD:\a\vcpkg_sample\vcpkg_sample -BD:\a\vcpkg_sample/build
 
       
