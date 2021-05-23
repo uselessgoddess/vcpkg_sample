@@ -13,13 +13,9 @@ jobs:
       uses: ashutoshvarma/action-cmake-build@master
       with:
           build-dir: ${{ runner.workspace }}/build
-          # will set the CC & CXX for cmake
           cc: gcc
           cxx: g++
           build-type: Debug
-          # Extra options pass to cmake while configuring project
-          install-build: true
-          # run build using '-j [parallel]' to use multiple threads to build
           parallel: 14
 
       
