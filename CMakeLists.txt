@@ -1,13 +1,13 @@
 cmake_minimum_required(VERSION 3.19)
 
-set(VCPKG_OVERLAY_PORTS ${CMAKE_CURRENT_LIST_DIR}/ports)
+#todo: use VCPKG_OVERLAY_PORTS
+file(COPY ports/platform-delegates-test DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/vcpkg/ports)
+file(COPY ports/platform-exceptions-test DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/vcpkg/ports)
 
 include(vcpkg.cmake)
 project(vcpkg_sample)
 
 set(CMAKE_CXX_STANDARD 20)
-
-vcpkg_add_package(platform-exceptions-test)
 
 find_package(platform-exceptions-test CONFIG REQUIRED)
 
