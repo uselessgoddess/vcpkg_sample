@@ -9,6 +9,8 @@ project(vcpkg_sample)
 
 set(CMAKE_CXX_STANDARD 20)
 
+vcpkg_add_package(platform-exceptions-test)
+
 find_package(platform-exceptions-test CONFIG REQUIRED)
 
 add_executable(main main.cpp)
