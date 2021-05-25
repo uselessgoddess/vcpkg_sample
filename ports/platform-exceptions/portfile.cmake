@@ -1,7 +1,7 @@
 vcpkg_download_distfile(ARCHIVE
         URLS "https://github.com/linksplatform/Exceptions/archive/refs/heads/master.zip"
-        FILENAME "platform-exceptions-test.zip"
-        SHA512 2dc213a276774ea812643a09efe69ff42dbe367d101646d4cc8b86609557a1beec656ec3b6e192c80ee8d9313bf965d9d3a67f15ccb02b2f26e7f161b2893a24
+        FILENAME "platform-exceptions.zip"
+        SHA512 5ac5b951de1cc4faad924fae03f309069c74cdf740b751982bedfb832ec446ff2ca10eeac4cd44b84050128ffdf4616393fd7e979b5a93c8b66bd0ee2707280e
         )
 
 vcpkg_extract_source_archive_ex(
@@ -16,11 +16,11 @@ file(INSTALL ${SOURCE_PATH}/cpp/Platform.Exceptions DESTINATION ${CURRENT_PACKAG
 set(DEPENDENCIES_PACKAGE_LIST)
 set(DEPENDENCIES_LIBRARY_LIST)
 
-list(APPEND DEPENDENCIES_PACKAGE_LIST platform-delegates-test)
+list(APPEND DEPENDENCIES_PACKAGE_LIST platform-delegates)
 list(APPEND DEPENDENCIES_LIBRARY_LIST Platform.Delegates)
 
 
-file(WRITE ${CURRENT_PACKAGES_DIR}/share/${PORT}/platform-exceptions-test-config.cmake
+file(WRITE ${CURRENT_PACKAGES_DIR}/share/${PORT}/platform-exceptions-config.cmake
 
         "find_package("${DEPENDENCIES_PACKAGE_LIST}" CONFIG REQUIRED)\n"
         "\n"

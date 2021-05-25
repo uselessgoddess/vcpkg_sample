@@ -1,8 +1,8 @@
 {
-  "name": "platform-exceptions-test",
+  "name": "platform-exceptions",
   "version-string": "0.0.15",
   "homepage": "https://github.com/linksplatform/Exceptions",
   "dependencies": [
-    "platform-delegates-test"
+    "platform-delegates"
   ]
 }

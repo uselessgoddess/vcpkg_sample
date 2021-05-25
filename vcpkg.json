@@ -1,7 +1,9 @@
 {
   "name": "sample",
   "version-string": "0.0.1",
-  "supports": "mingw & static & !msvc",
 
-  "dependencies": []
+
+  "dependencies": [
+      "platform-exceptions"
+  ]
 }

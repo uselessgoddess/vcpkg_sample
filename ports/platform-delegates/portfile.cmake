@@ -1,7 +1,7 @@
 vcpkg_download_distfile(ARCHIVE
         URLS "https://github.com/linksplatform/Delegates/archive/refs/heads/master.zip"
-        FILENAME "platform-delegates-test.zip"
-        SHA512 a07f3b116cc5d70164df401f564cb1fe66d20eef15e943a0584e64060fac259221ab70975c7bd8adb100d2a0577318be75ef133fade1b2c96224602c965546e6
+        FILENAME "platform-delegates.zip"
+        SHA512 b7003c5b7ae3710238287421b9b7b318201b71d819e05e2223a6380e0b2e9498d6b40904c6996d1ab2680c4cfc664d713dfacdae67a606b66ccf4ee2bdc2836e
         )
 
 
@@ -13,7 +13,7 @@ vcpkg_extract_source_archive_ex(
 file(INSTALL ${SOURCE_PATH}/LICENSE DESTINATION ${CURRENT_PACKAGES_DIR}/share/${PORT} RENAME copyright)
 file(INSTALL ${SOURCE_PATH}/cpp/Platform.Delegates DESTINATION ${CURRENT_PACKAGES_DIR}/include/)
 
-file(WRITE ${CURRENT_PACKAGES_DIR}/share/${PORT}/platform-delegates-test-config.cmake
+file(WRITE ${CURRENT_PACKAGES_DIR}/share/${PORT}/platform-delegates-config.cmake
         "add_library(Platform.Delegates INTERFACE)\n"
         "target_include_directories(Platform.Delegates INTERFACE ${CURRENT_PACKAGES_DIR}/include/Platform.Delegates)\n"
         "set_target_properties(Platform.Delegates PROPERTIES CXX_STANDARD 20)\n"
