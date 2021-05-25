@@ -1,6 +1,7 @@
 {
-  "name": "vcpkg_sample",
-  "dependencies": [
-    "sqlite3",
-  ]
+  "name": "sample",
+  "version-string": "0.0.1",
+  "supports": "mingw & static & !msvc",
+
+  "dependencies": []
 }

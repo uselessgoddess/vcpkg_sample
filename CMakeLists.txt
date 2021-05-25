@@ -1,13 +1,13 @@
 cmake_minimum_required(VERSION 3.19)
+
+set(VCPKG_OVERLAY_PORTS ${CMAKE_CURRENT_LIST_DIR}/ports)
+
 include(vcpkg.cmake)
 project(vcpkg_sample)
 
 set(CMAKE_CXX_STANDARD 20)
 
-message(${CMAKE_CXX_COMPILER})
-
-find_package(unofficial-sqlite3 CONFIG REQUIRED)
+find_package(platform-exceptions-test CONFIG REQUIRED)
 
 add_executable(main main.cpp)
-
-target_link_libraries(main PRIVATE unofficial::sqlite3::sqlite3)
+target_link_libraries(main PUBLIC Platform.Exceptions)

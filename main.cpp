@@ -1,8 +1,7 @@
-#include <sqlite3.h>
-#include <cstdio>
+#include <memory>
+#include <Platform.Delegates.h>
 
 int main()
 {
-    printf("%s\n", sqlite3_libversion());
-    return 0;
+    auto x = Platform::Delegates::CreateDelegate(std::function([]() {}));
 }
