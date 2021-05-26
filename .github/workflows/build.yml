@@ -12,11 +12,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2.0.0
     - name: Build project
-      uses: ashutoshvarma/action-cmake-build@master
-      with:
-        build-dir: ${{ runner.workspace }}/build
-        # will set the CC & CXX for cmake
-        cxx: ${{ matrix.compiler_cxx }}
+      run: cmake -DCMAKE_BUILD_TYPE=Release -S${{ runner.workspace }}/vcpkg_sample -B${{ runner.workspace }}/build
                     
   linux-build:
     runs-on: ubuntu-latest
@@ -27,12 +23,8 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2.0.0
     - name: Build project
-      uses: ashutoshvarma/action-cmake-build@master
-      with:
-        build-dir: ${{ runner.workspace }}/build
-        # will set the CC & CXX for cmake
-        cxx: ${{ matrix.compiler_cxx }}
-
+      run: cmake -DCMAKE_BUILD_TYPE=Release -S${{ runner.workspace }}/vcpkg_sample -B${{ runner.workspace }}/build
+      
   macos-build:
     runs-on: ubuntu-latest
     strategy:
