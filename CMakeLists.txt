@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.19)
 
+#todo: use VCPKG_OVERLAY_PORTS (maybe)
 file(COPY ports/platform-delegates DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/vcpkg/ports)
 file(COPY ports/platform-exceptions DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/vcpkg/ports)
 

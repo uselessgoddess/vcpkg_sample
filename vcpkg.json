@@ -4,6 +4,6 @@
 
 
   "dependencies": [
-      "platform-exceptions"
+    "platform-exceptions"
   ]
 }
