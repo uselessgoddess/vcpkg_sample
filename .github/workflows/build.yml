@@ -7,7 +7,7 @@ jobs:
     runs-on: windows-latest
     strategy:
       matrix:
-        compiler_cxx: [g++, clang, msvc]
+        compiler_cxx: [msvc]
     steps:
     - name: Checkout
       uses: actions/checkout@v2.0.0
@@ -33,22 +33,4 @@ jobs:
         # will set the CC & CXX for cmake
         cxx: ${{ matrix.compiler_cxx }}
 
-  macos-build:
-    runs-on: macos-latest
-    strategy:
-      matrix:
-        compiler_cxx: [g++, clang, msvc]
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v2.0.0
-    - name: Install glibc
-      run: |
-        sudo apt install gawk
-        brew install glibc
-    - name: Build project
-      uses: ashutoshvarma/action-cmake-build@master
-      with:
-        build-dir: ${{ runner.workspace }}/build
-        # will set the CC & CXX for cmake
-        cxx: ${{ matrix.compiler_cxx }}
 
