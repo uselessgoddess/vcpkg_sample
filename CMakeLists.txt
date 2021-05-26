@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.19)
 
+set(VCPKG_FEATURE_FLAGS manifests)
+set(VCPKG_OVERLAY_PORTS ${CMAKE_CURRENT_LIST_DIR}/ports)
+
 include(vcpkg.cmake)
 project(vcpkg_sample)
 

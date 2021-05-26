@@ -1,7 +1,7 @@
 vcpkg_download_distfile(ARCHIVE
         URLS "https://github.com/linksplatform/Exceptions/archive/refs/heads/master.zip"
         FILENAME "platform-exceptions.zip"
-        SHA512 5ac5b951de1cc4faad924fae03f309069c74cdf740b751982bedfb832ec446ff2ca10eeac4cd44b84050128ffdf4616393fd7e979b5a93c8b66bd0ee2707280e
+        SHA512 d8989043f5651b0467170f84b8e4d3cba7d8ef9c79e88255c3cf006b978838ecba46e3949e1a03ea60f57b11c1ba3b6122b40471b64b0ba04080a8ad6dae5a7b
         )
 
 vcpkg_extract_source_archive_ex(
