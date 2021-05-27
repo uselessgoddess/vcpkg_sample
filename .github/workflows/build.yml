@@ -48,8 +48,8 @@ jobs:
     - name: Vcpkg installation
       run: |
         git clone https://github.com/microsoft/vcpkg 
-        ./vcpkg/bootstrap-vcpkg.bat
-        ./vcpkg/vcpkg.exe integrate install
+        ./vcpkg/bootstrap-vcpkg.sh
+        ./vcpkg/vcpkg integrate install
     - name: Build project
       run: |
         export CC=musl-gcc
