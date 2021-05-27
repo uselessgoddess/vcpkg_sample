@@ -39,5 +39,5 @@ jobs:
     - name: Build project
       run: |
         export CC=musl-gcc
-        export CXX=${{ matrix.compiler }}
+        export CXX=musl-${{ matrix.compiler }}
         cmake -DCMAKE_BUILD_TYPE=Release -S${{ runner.workspace }}/vcpkg_sample -B${{ runner.workspace }}/build
