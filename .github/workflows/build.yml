@@ -38,5 +38,6 @@ jobs:
       uses: actions/checkout@v2.0.0
     - name: Build project
       run: |
+        export CC=musl-gcc
         export CXX=${{ matrix.compiler }}
         cmake -DCMAKE_BUILD_TYPE=Release -S${{ runner.workspace }}/vcpkg_sample -B${{ runner.workspace }}/build
